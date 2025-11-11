@@ -1,17 +1,15 @@
 // services/firebase.ts
-// The Firebase configuration and initialization has been updated to use the v9+ modular SDK,
-// which is required by the version specified in the importmap, fixing the import error.
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore, serverTimestamp as firestoreServerTimestamp } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyARvkSBeH3jkG2phMG1E0CeA8p14bHKIyM",
-  authDomain: "mente-e-calma-app.firebaseapp.com",
-  projectId: "mente-e-calma-app",
-  storageBucket: "mente-e-calma-app.firebasestorage.app",
-  messagingSenderId: "649805212287",
-  appId: "1:649805212287:web:c73de884d2c7c2108a2d4a"
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID,
 };
 
 // Initialize Firebase
